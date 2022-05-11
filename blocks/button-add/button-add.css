@@ -1,0 +1,19 @@
+.button-add {
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  height: 50px;
+  border: solid 2px white;
+  background-image: url(../../images/button-add.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  opacity: 1;
+  justify-self: end;
+  transition: 0.2s linear;
+  cursor: pointer;
+}
+
+.button-add:hover {
+  opacity: 0.6;
+}

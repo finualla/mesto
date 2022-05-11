@@ -1,0 +1,21 @@
+.page-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 880px;
+  min-width: 320px;
+}
+
+@media screen and (max-width: 1024px) {
+  .page-container {
+    width: calc(100vw * 0.8813);
+  }
+}
+
+@media screen  and (max-width: 320px) {
+  .page-container {
+    width: 282px;
+  }
+}

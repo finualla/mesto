@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Mesto Russia</title>
+</head>
+
+<body class="page">
+  <div class="page-container">
+    <header class="header">
+      <a class="header__logo" href="#"></a>
+      <div class="line"></div>
+    </header>
+
+
+    <main class="main">
+      <section class="profile">
+        <img src="./images/avatar.jpg" alt="Аватар пользователя Жак-Ив Кусто" class="profile__avatar">
+        <div class="profile__info">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button class="button-edit"></button>
+          <p class="profile__status">Исследователь гор Адыгеи</p>
+
+        </div>
+    
+        <button class="button-add"></button>
+      </section>
+
+      <section class="gallery">
+
+        <div class="card">
+          <img src="./images/card_dahovskaya.jpeg" alt="Даховская" class="card__image">
+          <div class="card__container">
+            <h2 class="card__title">Даховская</h2>
+            <div class="button-like"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./images/card_fisht-oshtenskii-pereval.JPG" alt="Фишт-Оштенский перевал" class="card__image">
+          <div class="card__container">
+            <h2 class="card__title">Фишт-Оштенский перевал</h2>
+            <div class="button-like"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./images/card_lago-naki.jpeg" alt="Лаго-Наки" class="card__image">
+          <div class="card__container">
+            <h2 class="card__title">Плато Лаго-Наки</h2>
+            <div class="button-like"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./images/card_mountain-fisht.jpeg" alt="Гора Фишт" class="card__image">
+          <div class="card__container">
+            <h2 class="card__title">Гора Фишт</h2>
+            <div class="button-like"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./images/card_oshten.jpeg" alt="Гора Оштен" class="card__image">
+          <div class="card__container">
+            <h2 class="card__title">Гора Оштен</h2>
+            <div class="button-like"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./images/card_rufabgo.jpeg" alt="Водопады Руфабго" class="card__image">
+          <div class="card__container">
+            <h2 class="card__title">Водопады Руфабго</h2>
+            <div class="button-like"></div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+    </footer>
+
+    <div class="popup">
+      <div class="popup__container">
+        <div class="button-close"></div>
+        <div class="popup__form">
+          <p class="popup__title">Редактировать профиль</p>
+          <form action="" class="popup__field-name"></form>
+          <form action="" class="popup__field-status"></form>
+          <button class="button-submit"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./vendor/script.js"></script>
+</body>
+</html>

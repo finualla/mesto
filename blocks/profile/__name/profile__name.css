@@ -1,0 +1,11 @@
+.profile__name {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  grid-column: 1;
+  grid-row: 1;
+  color: white;
+  font-size: 42px;
+  line-height: 48px;
+  font-weight: 500;
+}

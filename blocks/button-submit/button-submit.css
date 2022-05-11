@@ -1,0 +1,13 @@
+.button-submit {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  border-radius: 2px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.button-submit:hover {
+  opacity: 0.8;
+}

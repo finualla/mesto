@@ -1,0 +1,10 @@
+.profile__status {
+  margin: 0;
+  padding: 0;
+  grid-column: 1 / 2;
+  grid-row: 2;
+  color: white;
+  font-size: 18px;
+  line-height: 21.78px;
+  font-weight: 400;
+}
