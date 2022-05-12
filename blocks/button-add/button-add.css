@@ -5,6 +5,7 @@
   height: 50px;
   border: solid 2px white;
   background-image: url(../../images/button-add.svg);
+  background-size: 22px 22px;
   background-position: center center;
   background-repeat: no-repeat;
   background-color: transparent;

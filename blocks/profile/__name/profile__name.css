@@ -1,11 +1,27 @@
 .profile__name {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  grid-column: 1;
+  align-self: end;
+  transform: translateY(10px);
+  grid-column: 3;
   grid-row: 1;
   color: white;
   font-size: 42px;
   line-height: 48px;
   font-weight: 500;
+}
+
+@media screen and (max-width: 850px) {
+  .profile__name {
+    grid-row: 3;
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .profile__name {
+    font-size: 27px;
+    line-height: 32.68px;
+  }
 }

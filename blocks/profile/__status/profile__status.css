@@ -1,10 +1,27 @@
 .profile__status {
   margin: 0;
-  padding: 0;
-  grid-column: 1 / 2;
+  padding: 16px 0 0 0;
+  align-self: start;
+  grid-column: 3;
   grid-row: 2;
   color: white;
   font-size: 18px;
   line-height: 21.78px;
   font-weight: 400;
+}
+
+@media screen and (max-width: 850px) {
+  .profile__status {
+    grid-row: 5;
+    grid-column: 1 / -1;
+    justify-self: center;
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .profile__status {
+    font-size: 14px;
+    line-height: 16.94px;
+  }
 }

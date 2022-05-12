@@ -16,70 +16,68 @@
     </header>
 
 
-    <main class="main">
+    <main class="main main-padding">
+
       <section class="profile">
-        <img src="./images/avatar.jpg" alt="Аватар пользователя Жак-Ив Кусто" class="profile__avatar">
-        <div class="profile__info">
+        <img src="./images/avatar.jpg" alt="Аватар пользователя" class="profile__avatar">
+        <div class="profile__name-container">  
           <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <button class="button-edit"></button>
-          <p class="profile__status">Исследователь гор Адыгеи</p>
-
+          <button class="button-edit button-edit_place_profile"></button>
         </div>
-    
-        <button class="button-add"></button>
+        <p class="profile__status">Исследователь гор Адыгеи</p>
+        <button class="button-add button-add_place_profile"></button>
       </section>
 
-      <section class="gallery">
+      <ul class="gallery" >
+          <li class="card">
+            <img src="./images/card_dahovskaya.jpeg" alt="Даховская" class="card__image">
+            <div class="card__container">
+              <h2 class="card__title">Даховская</h2>
+              <div class="button-like"></div>
+            </div>
+          </li>
 
-        <div class="card">
-          <img src="./images/card_dahovskaya.jpeg" alt="Даховская" class="card__image">
-          <div class="card__container">
-            <h2 class="card__title">Даховская</h2>
-            <div class="button-like"></div>
-          </div>
-        </div>
+          <li class="card">
+            <img src="./images/card_fisht-oshtenskii-pereval.jpeg" alt="Фишт-Оштенский перевал" class="card__image">
+            <div class="card__container">
+              <h2 class="card__title">Фишт-Оштенский перевал</h2>
+              <div class="button-like"></div>
+            </div>
+          </li>
+        
+          <li class="card">
+            <img src="./images/card_lago-naki.jpeg" alt="Лаго-Наки" class="card__image">
+            <div class="card__container">
+              <h2 class="card__title">Плато Лаго-Наки</h2>
+              <div class="button-like"></div>
+            </div>
+          </li>
 
-        <div class="card">
-          <img src="./images/card_fisht-oshtenskii-pereval.jpeg" alt="Фишт-Оштенский перевал" class="card__image">
-          <div class="card__container">
-            <h2 class="card__title">Фишт-Оштенский перевал</h2>
-            <div class="button-like"></div>
-          </div>
-        </div>
+          <li class="card">
+            <img src="./images/card_mountain-fisht.jpeg" alt="Гора Фишт" class="card__image">
+            <div class="card__container">
+              <h2 class="card__title">Гора Фишт</h2>
+              <div class="button-like"></div>
+            </div>
+          </li>
 
-        <div class="card">
-          <img src="./images/card_lago-naki.jpeg" alt="Лаго-Наки" class="card__image">
-          <div class="card__container">
-            <h2 class="card__title">Плато Лаго-Наки</h2>
-            <div class="button-like"></div>
-          </div>
-        </div>
+          <li class="card">
+            <img src="./images/card_oshten.jpeg" alt="Гора Оштен" class="card__image">
+            <div class="card__container">
+              <h2 class="card__title">Гора Оштен</h2>
+              <div class="button-like"></div>
+            </div>
+          </li>
 
-        <div class="card">
-          <img src="./images/card_mountain-fisht.jpeg" alt="Гора Фишт" class="card__image">
-          <div class="card__container">
-            <h2 class="card__title">Гора Фишт</h2>
-            <div class="button-like"></div>
-          </div>
-        </div>
+          <li class="card">
+            <img src="./images/card_rufabgo.jpeg" alt="Водопады Руфабго" class="card__image">
+            <div class="card__container">
+              <h2 class="card__title">Водопады Руфабго</h2>
+              <div class="button-like"></div>
+            </div>
+          </li>
 
-        <div class="card">
-          <img src="./images/card_oshten.jpeg" alt="Гора Оштен" class="card__image">
-          <div class="card__container">
-            <h2 class="card__title">Гора Оштен</h2>
-            <div class="button-like"></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="./images/card_rufabgo.jpeg" alt="Водопады Руфабго" class="card__image">
-          <div class="card__container">
-            <h2 class="card__title">Водопады Руфабго</h2>
-            <div class="button-like"></div>
-          </div>
-        </div>
-
-      </section>
+      </ul>
     </main>
 
 
@@ -87,18 +85,21 @@
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
 
+
     <div class="popup">
       <div class="popup__container">
-        <div class="button-close"></div>
+        <button class="button-close"></button>
         <div class="popup__form">
-          <p class="popup__title">Редактировать профиль</p>
+          <h2 class="popup__title">Редактировать профиль</h2>
           <form action="" class="popup__field-name"></form>
           <form action="" class="popup__field-status"></form>
           <button class="button-submit"></button>
         </div>
       </div>
     </div>
+
   </div>
+  
   <script src="./vendor/script.js"></script>
 </body>
 </html>

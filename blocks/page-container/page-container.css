@@ -1,21 +1,17 @@
 .page-container {
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  padding: 45px 0 60px 0;
   display: flex;
+  box-sizing: border-box;
   flex-direction: column;
-  justify-content: center;
+  width: 100%;
   max-width: 880px;
-  min-width: 320px;
+  min-width: 282px;
 }
 
 @media screen and (max-width: 1024px) {
   .page-container {
-    width: calc(100vw * 0.8813);
+    width: calc(100vw * 0.9);
   }
 }
 
-@media screen  and (max-width: 320px) {
-  .page-container {
-    width: 282px;
-  }
-}

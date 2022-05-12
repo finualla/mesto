@@ -5,3 +5,9 @@
   height: 1px;
   background-color: #545454;
 }
+
+@media screen and (max-width: 425px) {
+  .line {
+    margin-top: 31.6px;
+  }
+}
