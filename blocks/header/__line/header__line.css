@@ -1,7 +1,9 @@
-.line {
+.header__line {
   margin: 41px 0 0 0;
   padding: 0;
   width: 100%;
+  max-width: 880px;
+  min-width: 282px;
   height: 1px;
   background-color: #545454;
 }
@@ -9,5 +11,6 @@
 @media screen and (max-width: 425px) {
   .line {
     margin-top: 31.6px;
+    width: 100%;
   }
 }

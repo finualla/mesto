@@ -1,5 +1,35 @@
 .main {
+  margin: 0 auto;
+  padding: 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 50px auto;
+  width: 100%;
+  max-width: 880px;
+  min-width: 282px;
+}
+
+@media screen and (max-width: 1024px) {
+  .main {
+    width: calc(880px - 0.85*(1024px - 100vw));
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .main {
+    grid-template-rows: auto 36px auto;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .main {
+    padding-top: 28px;
+    padding-bottom: 36px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .main {
+    width: 282px;
+  }
 }

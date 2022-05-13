@@ -3,6 +3,16 @@
   padding: 0;
   box-sizing: border-box;
   width: 100%;
+  max-width: 880px;
+  min-width: 282px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   grid-row: -1;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer {
+    width: calc(880px - 0.85*(1024px - 100vw));
+  }
 }

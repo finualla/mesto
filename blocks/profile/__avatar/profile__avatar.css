@@ -11,13 +11,22 @@
           clip-path: circle(60px at 60px 60px);
 }
 
-@media screen and (min-width: 425px) and (max-width: 850px) {
+@media screen and (max-width: 850px) {
   .profile__avatar {
     grid-row: 1;
-    grid-column: 1 / -1;
+    grid-column: 1;
     width: 160px;
     height: 160px;
     -webkit-clip-path: circle(80px at 80px 80px);
     clip-path: circle(80px at 80px 80px);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .profile__avatar {
+    width: 120px;
+    height: 120px;
+    -webkit-clip-path: circle(60px at 60px 60px);
+            clip-path: circle(60px at 60px 60px);
   }
 }

@@ -1,4 +1,4 @@
-.profile__status {
+.profile__job {
   margin: 0;
   padding: 16px 0 0 0;
   align-self: start;
@@ -11,7 +11,7 @@
 }
 
 @media screen and (max-width: 850px) {
-  .profile__status {
+  .profile__job {
     grid-row: 5;
     grid-column: 1 / -1;
     justify-self: center;
@@ -20,7 +20,7 @@
 }
 
 @media screen and (max-width: 425px) {
-  .profile__status {
+  .profile__job {
     font-size: 14px;
     line-height: 16.94px;
   }

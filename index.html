@@ -12,7 +12,7 @@
   <div class="page-container">
     <header class="header">
       <a class="header__logo" href="#"></a>
-      <div class="line"></div>
+      <div class="header__line"></div>
     </header>
 
 
@@ -24,7 +24,7 @@
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <button class="button-edit button-edit_place_profile"></button>
         </div>
-        <p class="profile__status">Исследователь гор Адыгеи</p>
+        <p class="profile__job">Исследователь гор Адыгеи</p>
         <button class="button-add button-add_place_profile"></button>
       </section>
 
@@ -85,21 +85,22 @@
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
 
-
-    <div class="popup">
-      <div class="popup__container">
-        <button class="button-close"></button>
-        <div class="popup__form">
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <form action="" class="popup__field-name"></form>
-          <form action="" class="popup__field-status"></form>
-          <button class="button-submit"></button>
-        </div>
-      </div>
-    </div>
-
   </div>
-  
+
+
+  <section class="popup">
+    <button class="button-close button-close_place_popup"></button>
+    <div class="popup__container">
+      <h2 class="popup__title">Редактировать&nbsp;профиль</h2>
+      <form class="popup__form">
+        <input class="popup__input popup__input_value_name" type="text" name="name" placeholder="Имя" required value="">
+        <input class="popup__input popup__input_value_job" type="text" name="job" placeholder="Чем занимаетесь?" required value="">
+      </form>
+      <button type="submit" class="button-submit"><span class="button-submit__text">Сохранить</span></button>
+    </div>
+  </section>
+
+
   <script src="./vendor/script.js"></script>
 </body>
 </html>
