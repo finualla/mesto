@@ -9,8 +9,14 @@
 }
 
 @media screen and (max-width: 425px) {
-  .line {
+  .header__line {
     margin-top: 31.6px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__line {
     width: 100%;
   }
 }
