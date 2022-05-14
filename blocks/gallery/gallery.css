@@ -11,9 +11,9 @@
 @media screen and (max-width: 1024px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px 50px; 
-    width: -webkit-fit-content; 
-    width: -moz-fit-content; 
+    grid-gap: 20px 50px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
   }
 }
