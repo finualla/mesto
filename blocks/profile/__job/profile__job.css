@@ -8,6 +8,16 @@
   font-size: 18px;
   line-height: 21.78px;
   font-weight: 400;
+  max-width: 430px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+  .profile__job {
+    max-width: 350px;
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -23,5 +33,6 @@
   .profile__job {
     font-size: 14px;
     line-height: 16.94px;
+    max-width: 282px;
   }
 }
