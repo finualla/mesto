@@ -1,19 +1,35 @@
 .button-close {
-  margin: 0;
-  padding: 0;
   display: block;
-  opacity: 1;
+  position: absolute;
+  top: calc((-32px - 8px));
+  right: calc(-32px - 8px);
   width: 32px;
   height: 32px;
   background-image: url(../../images/button-close.svg);
   background-size: cover;
-  background-color: transparent;
-  border: none;
   transition: 0.2s linear;
-  cursor: pointer;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+
+
 }
 
 .button-close:hover {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 600px) {
+  .button-close {
+    width: 20px;
+    height: 20px;
+    top: calc((-20px - 8px));
+    right: calc(-20px - 8px);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .button-close {
+    top: calc((-20px - 8px));
+    right: 0
+
+  }
 }

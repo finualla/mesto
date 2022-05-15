@@ -1,16 +1,12 @@
 .button-like {
-  margin: 0;
-  padding: 0;
   width: 22px;
   height: 19px;
   background-image: url(../../images/button-like_disabled.svg);
-  opacity: 1;
   transition: 0.2s linear;
 }
 
 .button-like:hover {
   opacity: 0.5;
-  cursor: pointer;
 }
 
 .button-like:active {

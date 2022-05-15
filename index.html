@@ -5,79 +5,81 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
-  <title>Mesto Russia</title>
+  <title>Проект "mesto"</title>
 </head>
 
 <body class="page">
   <div class="page-container">
     <header class="header">
       <a class="header__logo" href="#"></a>
-      <div class="header__line"></div>
     </header>
 
 
-    <main class="main main-padding">
+    <main class="main">
+
 
       <section class="profile">
         <img src="./images/avatar.jpg" alt="Аватар пользователя" class="profile__avatar">
         <div class="profile__name-container">  
           <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <button class="button-edit button-edit_place_profile"></button>
+          <button class="button profile__button-edit" type="button" aria-label="Редактировать"></button>
         </div>
         <p class="profile__job">Исследователь гор Адыгеи</p>
-        <button class="button-add button-add_place_profile"></button>
+        <button class="button button-add" type="button" aria-label="Добавить пост"></button>
       </section>
 
 
-      <ul class="gallery" >
-          <li class="card">
-            <img src="./images/card_dahovskaya.jpeg" alt="Даховская" class="card__image">
-            <div class="card__container">
-              <h2 class="card__title">Даховская</h2>
-              <div class="button-like"></div>
-            </div>
-          </li>
+      <section class="posts" aria-label="Посты">
+        <ul class="posts__list">
+            <li class="card">
+              <img src="./images/card_dahovskaya.jpeg" alt="Даховская" class="card__image">
+              <div class="card__container">
+                <h2 class="card__title">Даховская</h2>
+                <button class="button button-like" aria-label="Нравится"></button>
+              </div>
+            </li>
 
-          <li class="card">
-            <img src="./images/card_fisht-oshtenskii-pereval.jpeg" alt="Фишт-Оштенский перевал" class="card__image">
-            <div class="card__container">
-              <h2 class="card__title">Фишт-Оштенский перевал</h2>
-              <div class="button-like"></div>
-            </div>
-          </li>
-        
-          <li class="card">
-            <img src="./images/card_lago-naki.jpeg" alt="Лаго-Наки" class="card__image">
-            <div class="card__container">
-              <h2 class="card__title">Плато Лаго-Наки</h2>
-              <div class="button-like"></div>
-            </div>
-          </li>
+            <li class="card">
+              <img src="./images/card_fisht-oshtenskii-pereval.jpeg" alt="Фишт-Оштенский перевал" class="card__image">
+              <div class="card__container">
+                <h2 class="card__title">Фишт-Оштенский перевал</h2>
+                <button class="button button-like" aria-label="Нравится"></button>
+              </div>
+            </li>
+          
+            <li class="card">
+              <img src="./images/card_lago-naki.jpeg" alt="Лаго-Наки" class="card__image">
+              <div class="card__container">
+                <h2 class="card__title">Плато Лаго-Наки</h2>
+                <button class="button button-like" aria-label="Нравится"></button>
+              </div>
+            </li>
 
-          <li class="card">
-            <img src="./images/card_mountain-fisht.jpeg" alt="Гора Фишт" class="card__image">
-            <div class="card__container">
-              <h2 class="card__title">Гора Фишт</h2>
-              <div class="button-like"></div>
-            </div>
-          </li>
+            <li class="card">
+              <img src="./images/card_mountain-fisht.jpeg" alt="Гора Фишт" class="card__image">
+              <div class="card__container">
+                <h2 class="card__title">Гора Фишт</h2>
+                <button class="button button-like" aria-label="Нравится"></button>
+              </div>
+            </li>
 
-          <li class="card">
-            <img src="./images/card_oshten.jpeg" alt="Гора Оштен" class="card__image">
-            <div class="card__container">
-              <h2 class="card__title">Гора Оштен</h2>
-              <div class="button-like"></div>
-            </div>
-          </li>
+            <li class="card">
+              <img src="./images/card_oshten.jpeg" alt="Гора Оштен" class="card__image">
+              <div class="card__container">
+                <h2 class="card__title">Гора Оштен</h2>
+                <button class="button button-like" aria-label="Нравится"></button>
+              </div>
+            </li>
 
-          <li class="card">
-            <img src="./images/card_rufabgo.jpeg" alt="Водопады Руфабго" class="card__image">
-            <div class="card__container">
-              <h2 class="card__title">Водопады Руфабго</h2>
-              <div class="button-like"></div>
-            </div>
-          </li>
-      </ul>
+            <li class="card">
+              <img src="./images/card_rufabgo.jpeg" alt="Водопады Руфабго" class="card__image">
+              <div class="card__container">
+                <h2 class="card__title">Водопады Руфабго</h2>
+                <button class="button button-like" aria-label="Нравится"></button>
+              </div>
+            </li>
+        </ul>
+      </section>
     </main>
 
 
@@ -89,19 +91,19 @@
   </div>
 
 <!-- Окно popup -->
-  <section class="popup">
-    <button class="button-close button-close_place_popup"></button>
+  <div class="popup">
+
     <div class="popup__container">
+      <button class="button button-close" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Редактировать&nbsp;профиль</h2>
-      <form class="popup__form">
+      <form class="popup__form" name="changeNameJob">
         <input class="popup__input popup__input_value_name" type="text" placeholder="Ваше имя" name="nameInput" required value="Имя" maxlength="30">
         <input class="popup__input popup__input_value_job" placeholder="Чем занимаетесь?" name="jobInput" required value="Работа" maxlength="30">
-        <button type="submit" class="button-submit"><span class="button-submit__text">Сохранить</span></button>
+        <button type="submit" class="button button-submit">Сохранить</button>
       </form>
-
     </div>
-  </section>
+  </div>
 
-  <script src="./vendor/index.js"></script>
+  <script src="./vendor/scripts/index.js"></script>
 </body>
 </html>

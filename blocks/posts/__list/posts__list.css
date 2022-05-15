@@ -1,7 +1,7 @@
-.gallery {
+.posts__list {
   margin: 0 auto;
   padding: 0;
-  grid-row: 3;
+  list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .gallery {
+  .posts__list {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px 50px;
     width: -webkit-fit-content;
@@ -19,13 +19,13 @@
 }
 
 @media screen and (max-width: 850px) {
-  .gallery {
+  .posts__list {
     grid-gap: 20px;
   }
 }
 
 @media screen and (max-width: 650px) {
-  .gallery {
+  .posts__list {
     grid-template-columns: 1fr;
     grid-gap: 20px;
   }

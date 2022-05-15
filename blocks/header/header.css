@@ -1,11 +1,13 @@
 .header {
   margin: 0;
-  padding: 0;
+  padding: 0 0 41px 0;
+  box-sizing: border-box;
   display: block;
   width: 100%;
   max-width: 880px;
   min-width: 282px;
   height: 74px;
+  border-bottom: 1px solid #545454;
 }
 
 @media screen and (max-width: 1024px) {
@@ -17,6 +19,7 @@
 @media screen and (max-width: 425px) {
   .header {
     height: 56px;
+    padding-bottom: 31.6px;
   }
 }
 

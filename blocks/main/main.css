@@ -1,6 +1,6 @@
 .main {
   margin: 0 auto;
-  padding: 0;
+  padding: 40px 0 66px 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 50px auto;
@@ -31,5 +31,7 @@
 @media screen and (max-width: 320px) {
   .main {
     width: 282px;
+    padding-top: 42px;
+    padding-bottom: 48px;
   }
 }

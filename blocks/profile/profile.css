@@ -21,7 +21,8 @@
 
 @media screen and (max-width: 425px) {
   .profile {
-    grid-template-rows: -webkit-min-content 26px -webkit-min-content 14px -webkit-min-content 36px -webkit-min-content;
-    grid-template-rows: min-content 26px min-content 14px min-content 36px min-content;
+    grid-template-rows: -webkit-min-content 17px -webkit-min-content 16px -webkit-min-content 34px -webkit-min-content;
+    grid-template-rows: min-content 17px min-content 16px min-content 34px min-content;
+    align-items: baseline;
   }
 }

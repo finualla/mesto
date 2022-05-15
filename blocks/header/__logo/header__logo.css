@@ -6,6 +6,7 @@
   height: 33px;
   background-image: url(../../../images/logo.svg);
   background-size: contain;
+  background-repeat: no-repeat;
   opacity: 1;
   transition: 0.2s linear;
 }

@@ -32,6 +32,12 @@
 
 @media screen and (max-width: 425px) {
   .profile__name {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .profile__name {
     font-size: 27px;
     line-height: 32.68px;
     max-width: 250px;

@@ -1,20 +1,33 @@
 .button-add {
-  margin: 0;
-  padding: 0;
   width: 150px;
   height: 50px;
+  grid-row: 1 / 3;
+  grid-column: 5;
   border: solid 2px white;
+  border-radius: 2px;
   background-image: url(../../images/button-add.svg);
   background-size: 22px 22px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  opacity: 1;
   justify-self: end;
   transition: 0.2s linear;
-  cursor: pointer;
+
 }
 
 .button-add:hover {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 850px) {
+  .button-add {
+    grid-row: 7;
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 282px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .button-add {
+    width: 100%;
+    background-size: 16px 16px;
+  }
 }

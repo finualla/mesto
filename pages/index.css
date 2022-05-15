@@ -4,19 +4,26 @@
 @import url(../blocks/page/page.css);
 @import url(../blocks/page-container/page-container.css);
 @import url(../blocks/main/main.css);
-@import url(../blocks/main-padding/main-padding.css);
+
+/* Кнопки */
+@import url(../blocks/button/button.css);
+@import url(../blocks/button-add/button-add.css);
+@import url(../blocks/button-like/button-like.css);
+@import url(../blocks/button-submit/button-submit.css);
+@import url(../blocks/button-close/button-close.css);
 
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
-@import url(../blocks/header/__line/header__line.css);
 
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__name-container/profile__name-container.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__name/profile__name.css);
 @import url(../blocks/profile/__job/profile__job.css);
+@import url(../blocks/profile/__button-edit/profile__button-edit.css);
 
-@import url(../blocks/gallery/gallery.css);
+@import url(../blocks/posts/posts.css);
+@import url(../blocks/posts/__list/posts__list.css);
 
 @import url(../blocks/card/card.css);
 @import url(../blocks/card/__image/card__image.css);
@@ -33,14 +40,4 @@
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__input/popup__input.css);
-@import url(../blocks/popup/__input/_value_name/popup__input_value_name.css);
-@import url(../blocks/popup/__input/_value_job/popup__input_value_job.css);
 
-/* Кнопки */
-@import url(../blocks/button-add/button-add.css);
-@import url(../blocks/button-add/_place_profile/button-add_place_profile.css);
-@import url(../blocks/button-edit/button-edit.css);
-@import url(../blocks/button-like/button-like.css);
-@import url(../blocks/button-submit/button-submit.css);
-@import url(../blocks/button-close/button-close.css);
-@import url(../blocks/button-close/_place_popup/button-close_place_popup.css);

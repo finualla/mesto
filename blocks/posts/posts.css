@@ -1,0 +1,8 @@
+.posts {
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  grid-row: 3;
+}
