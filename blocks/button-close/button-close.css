@@ -28,8 +28,7 @@
 
 @media screen and (max-width: 425px) {
   .button-close {
-    top: calc((-20px - 8px));
+    top: calc((-20px - 16px));
     right: 0
-
   }
 }
