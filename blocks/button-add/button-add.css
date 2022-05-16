@@ -26,7 +26,6 @@
 
 @media screen and (max-width: 425px) {
   .button-add {
-    width: 100%;
     background-size: 16px 16px;
   }
 }

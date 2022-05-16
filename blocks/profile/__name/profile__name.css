@@ -1,8 +1,6 @@
 .profile__name {
   margin: 0;
   padding: 0;
-  grid-column: 3;
-  grid-row: 1;
   color: white;
   font-size: 42px;
   line-height: 48px;
@@ -24,7 +22,14 @@
     grid-row: 3;
     grid-column: 1 / -1;
     justify-self: center;
-    max-width: 340px;
+    max-width: 380px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .profile__name {
+    max-width: 320px;
+    font-size: 36px;
   }
 }
 
@@ -32,6 +37,6 @@
   .profile__name {
     font-size: 27px;
     line-height: 32.68px;
-    max-width: 250px;
+    max-width: 220px;
   }
 }
