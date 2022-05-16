@@ -1,8 +1,6 @@
 .profile__name {
   margin: 0;
   padding: 0;
-  align-self: end;
-  transform: translateY(10px);
   grid-column: 3;
   grid-row: 1;
   color: white;
@@ -27,12 +25,6 @@
     grid-column: 1 / -1;
     justify-self: center;
     max-width: 340px;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .profile__name {
-    transform: translateY(0);
   }
 }
 

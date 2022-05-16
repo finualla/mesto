@@ -27,6 +27,5 @@
 @media screen and (max-width: 650px) {
   .posts__list {
     grid-template-columns: 1fr;
-    grid-gap: 20px;
   }
 }

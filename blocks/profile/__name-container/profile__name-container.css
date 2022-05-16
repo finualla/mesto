@@ -1,6 +1,7 @@
 .profile__name-container {
   margin: 0;
   padding: 0;
+  justify-self: start;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -10,11 +11,13 @@
   gap: 18px;
   grid-column: 3;
   grid-row: 1;
-  align-items: flex-end;
+  align-items: center;
+  outline: solid 1px red
 }
 
 @media screen and (max-width: 850px) {
   .profile__name-container {
+    justify-self: center;
     grid-column: 1;
     grid-row: 3;
     position: relative;
