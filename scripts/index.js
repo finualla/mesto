@@ -66,8 +66,8 @@ function renderCard(arr) {
   let cardName = cardElement.querySelector('.card__title');//title карточки в html
   let cardLink = cardElement.querySelector('.card__image'); //ссылка в html
   let cardImageAlt = cardElement.querySelector('.card__image'); //альт в html
-  cardName.textContent = arr.name; //работает
-  cardLink.src = arr.link; // изнач. карточка получает
+  cardName.textContent = arr.name;
+  cardLink.src = arr.link;
   cardImageAlt.alt = arr.name;
   cardList.append(cardElement);
 }
