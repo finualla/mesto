@@ -1,0 +1,8 @@
+.card__image-zoomed {
+  margin: 0;
+  padding: 0;
+  display: block;
+  max-width: 75vw;
+  max-height: 75vh;
+
+}

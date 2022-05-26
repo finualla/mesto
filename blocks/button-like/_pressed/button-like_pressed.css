@@ -1,0 +1,4 @@
+.button-like_pressed {
+  background-image: url(../../../images/button-like_active.svg);
+  opacity: 1;
+}

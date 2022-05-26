@@ -31,59 +31,6 @@
 
       <section class="posts" aria-label="Посты">
         <ul class="posts__list">
-            <li class="card">
-              <button class="button button-delete" aria-label="Удалить" type="button"></button>
-              <img src="./images/card_dahovskaya.jpeg" alt="Даховская" class="card__image">
-              <div class="card__container">
-                <h2 class="card__title">Даховская</h2>
-                <button class="button button-like" aria-label="Нравится" type="button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <button class="button button-delete" aria-label="Удалить" type="button"></button>
-              <img src="./images/card_fisht-oshtenskii-pereval.jpeg" alt="Фишт-Оштенский перевал" class="card__image">
-              <div class="card__container">
-                <h2 class="card__title">Фишт-Оштенский перевал</h2>
-                <button class="button button-like" aria-label="Нравится" type="button"></button>
-              </div>
-            </li>
-          
-            <li class="card">
-              <button class="button button-delete" aria-label="Удалить" type="button"></button>
-              <img src="./images/card_lago-naki.jpeg" alt="Лаго-Наки" class="card__image">
-              <div class="card__container">
-                <h2 class="card__title">Плато Лаго-Наки</h2>
-                <button class="button button-like" aria-label="Нравится" type="button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <button class="button button-delete" aria-label="Удалить" type="button"></button>
-              <img src="./images/card_mountain-fisht.jpeg" alt="Гора Фишт" class="card__image">
-              <div class="card__container">
-                <h2 class="card__title">Гора Фишт</h2>
-                <button class="button button-like" aria-label="Нравится" type="button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <button class="button button-delete" aria-label="Удалить" type="button"></button>
-              <img src="./images/card_oshten.jpeg" alt="Гора Оштен" class="card__image">
-              <div class="card__container">
-                <h2 class="card__title">Гора Оштен</h2>
-                <button class="button button-like" aria-label="Нравится" type="button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <button class="button button-delete" aria-label="Удалить" type="button"></button>
-              <img src="./images/card_rufabgo.jpeg" alt="Водопады Руфабго" class="card__image">
-              <div class="card__container">
-                <h2 class="card__title">Водопады Руфабго</h2>
-                <button class="button button-like" aria-label="Нравится" type="button"></button>
-              </div>
-            </li>
         </ul>
       </section>
     </main>
@@ -96,18 +43,50 @@
 
   </div>
 
-<!-- Окно popup редактировать -->
-  <div class="popup">
+<!-- Окно popup редактировать имя -->
+  <div class="popup popup_type_edit-name">
     <div class="popup__container">
       <button class="button button-close" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Редактировать&nbsp;профиль</h2>
-      <form class="popup__form" name="changeNameJob">
+      <form class="popup__form popup__form_type_editname" name="changeNameJob">
         <input class="popup__input popup__input_value_name" type="text" placeholder="Ваше имя" name="nameInput" required value="Имя" maxlength="32">
         <input class="popup__input popup__input_value_job" placeholder="Чем занимаетесь?" name="jobInput" required value="Работа" maxlength="32">
         <button type="submit" class="button button-submit">Сохранить</button>
       </form>
     </div>
   </div>
+
+<!-- Окно popup добавить карточку -->
+<div class="popup popup_type_add-card">
+  <div class="popup__container">
+    <button class="button button-close" type="button" aria-label="Закрыть"></button>
+    <h2 class="popup__title">Новое&nbsp;место</h2>
+    <form class="popup__form popup__form_type_addcard" name="addCard">
+      <input class="popup__input popup__input_value_cardname" type="text" placeholder="Название" name="nameInput" required value="Название" maxlength="32">
+      <input class="popup__input popup__input_value_cardname" placeholder="Ссылка на картинку" name="jobInput" required value="Ссылка" maxlength="32">
+      <button type="submit" class="button button-submit">Создать</button>
+    </form>
+  </div>
+</div>
+
+<div class="popup popup_type_image-zoomed">
+  <figure>
+    <img src='https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg' class="card__image-zoomed">
+    <figcaption></figcaption>
+  </figure>
+</div>
+
+  <!-- Template для добавления карточки -->
+  <template id="card-template">
+    <li class="card">
+      <button class="button button-delete" aria-label="Удалить" type="button"></button>
+      <img class="card__image">
+      <div class="card__container">
+        <h2 class="card__title"></h2>
+        <button class="button button-like" aria-label="Нравится" type="button"></button>
+      </div>
+    </li>
+  </template>
 
   <script src="./scripts/index.js"></script>
 </body>
