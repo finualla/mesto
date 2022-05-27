@@ -1,10 +1,40 @@
 
 // TO DO
+
+// Удаление карточки по нажатию корзины. Код не работает
+deleteButton.addEventListener('click', function() {
+ deleteButton.closest('.card').remove();
+});
+
+// Обработчик отправки формы добавления карточки
+function formCardSubmit (evt) {
+  evt.preventDefault();
+  //создаем новый массив пустой, в нем будет новые данные
+  let newCard = []; 
+  // добавляем новые данные в массив
+  // newCard.push(
+  //   {
+  //     name: `${cardNameInput.value}`,
+  //     link: `${imgLinkInput.value}`
+  //   })
+  // initialCards.concat('newCard');//добавляем новый массив в конец старого
+  initialCards.push({name: cardNameInput.value, link: imgLinkInput.value});
+  closePopup(popupCard);
+}
+formElementCard.addEventListener('submit', formCardSubmit); 
+
+// Открытие popup: увеличенная картинка
+function openPopupImg () {
+находим в документе картинку и вешаем слушатель
+ popupCard.classList.add('popup_opened');
+}
+???.addEventListener('click', openPopupImg);
+
 // кнопка лайк меняет картинку при нажамии
-//function like() {
-//    likeButton.classList.toggle('.button-like_pressed');
-//}
-//likeButton.addEventListener('click', like);
+function like() {
+   likeButton.classList.toggle('.button-like_pressed');
+}
+likeButton.addEventListener('click', like);
 
 /// Нажатие на лайк
 function toLike (evt) {
@@ -14,11 +44,7 @@ likes.addEventListener('click', toLike);
 
 
 
-// Удаление карточки по нажатию корзины. Код не работает, скопирован с тренажера. 
-deleteButton.addEventListener('click', function() {
-  const listItem = deleteButton.closest('.card');
-  listItem.remove();
-});
+
 
 // По нажатию на картинку она открывается полноразмерно
 
