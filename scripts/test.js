@@ -36,15 +36,6 @@ function like() {
 }
 likeButton.addEventListener('click', like);
 
-/// Нажатие на лайк
-function toLike (evt) {
-  evt.target.classList.toggle('button-like_pressed');
-}
-likes.addEventListener('click', toLike);
-
-
-
-
 
 // По нажатию на картинку она открывается полноразмерно
 

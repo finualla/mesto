@@ -25,19 +25,20 @@ const initialCards = [
     }
   ];
 
+// Template
+const cardList = document.querySelector('.posts__list'); // куда вставляем контент
+const cardTemplate = document.getElementById('card-template').content; // шаблон карточки
+const cardElement = cardTemplate.cloneNode(true); // элемент карточки пустой
+
+// то что на сайте в html
+let profileName = document.querySelector('.profile__name');
+let profileJob = document.querySelector('.profile__job');
+
 // Кнопки
 const editButton = document.querySelector('.profile__button-edit');
 const addButton = document.querySelector('.button-add');
 const closeButtons = document.querySelectorAll('.button-close');
 const deleteButton = document.querySelector('.button-delete');
-
-// Template
-const cardList = document.querySelector('.posts__list'); // куда вставляем контент
-const cardTemplate = document.getElementById('card-template').content; // шаблон карточки
-const cardElement = cardTemplate.cloneNode(true); // элемент карточки пустой
-// то что на сайте в html
-let profileName = document.querySelector('.profile__name');
-let profileJob = document.querySelector('.profile__job');
 
 // Попапы
 const popups = document.querySelectorAll('.popup');
@@ -55,15 +56,21 @@ let jobInput = popupName.querySelector('.popup__input_value_job');//поле в�
 let cardNameInput = popupCard.querySelector('.popup__input_value_cardname');//поле ввод места
 let imgLinkInput = popupCard.querySelector('.popup__input_value_cardlink');//поле ввод ссылка
 
+// Попап закрытие по крестику
+// function exitPopup(evt) {
+//   evt.target.closest('.popup').classList.remove('popup_opened');
+//   }
+// closeButtons.forEach((item) => {
+//   item.addEventListener('click', exitPopup)
+// });
 
-// Попап закрытие (любого)
 function closePopup(evt) {
   evt.target.closest('.popup').classList.remove('popup_opened');
-  console.log(evt.target.closest('.popup'));
-  }
-  closeButtons.forEach((item) => {
+}
+closeButtons.forEach((item) => {
   item.addEventListener('click', closePopup)
-  });
+});
+
 
 // Эта функция рендерит карточки перевоначальные
 function renderCards(data) {
@@ -103,12 +110,23 @@ addButton.addEventListener('click', openPopupCard);
 
 // Обработчик отправки формы редактирования имени
 function formNameSubmit (evt) {
-  evt.preventDefault();
-  profileName.textContent = nameInput.value;
-  profileJob.textContent = jobInput.value;
-  closePopup(popupName);
-}
-formElementName.addEventListener('submit', formNameSubmit); 
+    evt.preventDefault();
+    profileName.textContent = nameInput.value;
+    profileJob.textContent = jobInput.value;
+    formElementName.closest('.popup').classList.remove('popup_opened');
+  }
+  formElementName.addEventListener('submit', formNameSubmit); 
 
 
-// не через массивы, через темплейт добавлять карточки
+// не через массивы, через темплейт добавлять карточки!!!
+
+
+
+/// Нажатие / отжатие на лайк
+const likes = document.querySelectorAll('.button-like');
+function likeUnlike(evt) {
+  evt.target.classList.toggle('button-like_pressed');
+  }
+likes.forEach((item) => {
+  item.addEventListener('click', likeUnlike)
+});
