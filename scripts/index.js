@@ -65,25 +65,22 @@ closeButtons.forEach((item) => {
   item.addEventListener('click', closePopup)
 });
 
-// Эта функция рендерит карточки перевоначальные
-function renderCards(data) {
-  data.forEach(item=>renderCard(item));
-  };
-
-// Эта функция рендерит карточку
-function renderCard(item) {
+// Эта функция рендерим любую карточку с данными
+function renderCard(name, link) {
   const cardElement = cardTemplate.cloneNode(true); // элемент карточки пустой
   let cardName = cardElement.querySelector('.card__title');//title карточки в html
   let cardLink = cardElement.querySelector('.card__image'); //ссылка в html
   let cardImageAlt = cardElement.querySelector('.card__image'); //альт в html
-  cardName.textContent = item.name;
-  cardLink.src = item.link;
-  cardImageAlt.alt = item.name;
+  cardName.textContent = name;
+  cardLink.src = link;
+  cardImageAlt.alt = name;
   cardList.append(cardElement);
 }
 
-// Вызываем функцию, которая рендерит первоначальные карточки
-renderCards(initialCards);
+// Рендерим первые 6 карточек
+initialCards.forEach(function (item) {
+  renderCard(item.name, item.link);
+});
 
 // Открытие popup: редактирование имени
 function openPopupEditName () {
@@ -113,14 +110,7 @@ formElementName.addEventListener('submit', formNameSubmit);
 // Обработчик отправки формы добавления поста
 function formCardSubmit (evt) {
   evt.preventDefault();
-  const cardElement = cardTemplate.cloneNode(true); // элемент карточки пустой
-  let cardName = cardElement.querySelector('.card__title');//title карточки в html
-  let cardLink = cardElement.querySelector('.card__image'); //ссылка в html
-  let cardImageAlt = cardElement.querySelector('.card__image'); //альт в html
-  cardName.textContent = cardNameInput.value;
-  cardLink.src = cardLinkInput.value;
-  cardImageAlt.alt = cardLinkInput.value;
-  cardList.append(cardElement);
+  renderCard(cardNameInput.value, cardLinkInput.value);
   formElementCard.closest('.popup').classList.remove('popup_opened');
 }
 formElementCard.addEventListener('submit', formCardSubmit); 
