@@ -48,22 +48,16 @@ const popupImg = document.querySelector('.popup_type_image-zoomed');
 
 // Формы для event слушателя
 const formElementName = popupName.querySelector('.popup__form_type_editname');
-const formElementCard = popupCard.querySelector('popup__form_type_addcard');
+const formElementCard = popupCard.querySelector('.popup__form_type_addcard');
 
 // Инпуты в попапах
 let nameInput = popupName.querySelector('.popup__input_value_name');//поле ввод имя
 let jobInput = popupName.querySelector('.popup__input_value_job');//поле ввод работа
 let cardNameInput = popupCard.querySelector('.popup__input_value_cardname');//поле ввод места
-let imgLinkInput = popupCard.querySelector('.popup__input_value_cardlink');//поле ввод ссылка
+let cardLinkInput = popupCard.querySelector('.popup__input_value_cardlink');//поле ввод ссылка
 
-// Попап закрытие по крестику
-// function exitPopup(evt) {
-//   evt.target.closest('.popup').classList.remove('popup_opened');
-//   }
-// closeButtons.forEach((item) => {
-//   item.addEventListener('click', exitPopup)
-// });
 
+// Попап: закрытие по кнопке крестика
 function closePopup(evt) {
   evt.target.closest('.popup').classList.remove('popup_opened');
 }
@@ -71,21 +65,20 @@ closeButtons.forEach((item) => {
   item.addEventListener('click', closePopup)
 });
 
-
 // Эта функция рендерит карточки перевоначальные
 function renderCards(data) {
   data.forEach(item=>renderCard(item));
   };
 
 // Эта функция рендерит карточку
-function renderCard(arr) {
+function renderCard(item) {
   const cardElement = cardTemplate.cloneNode(true); // элемент карточки пустой
   let cardName = cardElement.querySelector('.card__title');//title карточки в html
   let cardLink = cardElement.querySelector('.card__image'); //ссылка в html
   let cardImageAlt = cardElement.querySelector('.card__image'); //альт в html
-  cardName.textContent = arr.name;
-  cardLink.src = arr.link;
-  cardImageAlt.alt = arr.name;
+  cardName.textContent = item.name;
+  cardLink.src = item.link;
+  cardImageAlt.alt = item.name;
   cardList.append(cardElement);
 }
 
@@ -103,24 +96,34 @@ editButton.addEventListener('click', openPopupEditName);
 // Открытие popup: добавление карточки
 function openPopupCard () {
   cardNameInput.value = ''; //очищаем поля ввода при открытии попапа
-  imgLinkInput.value = ''; //очищаем поля ввода при открытии попапа
+  cardLinkInput.value = ''; //очищаем поля ввода при открытии попапа
   popupCard.classList.add('popup_opened');
 }
 addButton.addEventListener('click', openPopupCard);
 
 // Обработчик отправки формы редактирования имени
 function formNameSubmit (evt) {
-    evt.preventDefault();
-    profileName.textContent = nameInput.value;
-    profileJob.textContent = jobInput.value;
-    formElementName.closest('.popup').classList.remove('popup_opened');
+  evt.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileJob.textContent = jobInput.value;
+  formElementName.closest('.popup').classList.remove('popup_opened');
   }
-  formElementName.addEventListener('submit', formNameSubmit); 
+formElementName.addEventListener('submit', formNameSubmit); 
 
-
-// не через массивы, через темплейт добавлять карточки!!!
-
-
+// Обработчик отправки формы добавления поста
+function formCardSubmit (evt) {
+  evt.preventDefault();
+  const cardElement = cardTemplate.cloneNode(true); // элемент карточки пустой
+  let cardName = cardElement.querySelector('.card__title');//title карточки в html
+  let cardLink = cardElement.querySelector('.card__image'); //ссылка в html
+  let cardImageAlt = cardElement.querySelector('.card__image'); //альт в html
+  cardName.textContent = cardNameInput.value;
+  cardLink.src = cardLinkInput.value;
+  cardImageAlt.alt = cardLinkInput.value;
+  cardList.append(cardElement);
+  formElementCard.closest('.popup').classList.remove('popup_opened');
+}
+formElementCard.addEventListener('submit', formCardSubmit); 
 
 /// Нажатие / отжатие на лайк
 const likes = document.querySelectorAll('.button-like');

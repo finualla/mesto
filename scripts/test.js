@@ -9,15 +9,15 @@ deleteButton.addEventListener('click', function() {
 // Обработчик отправки формы добавления карточки
 function formCardSubmit (evt) {
   evt.preventDefault();
-  //создаем новый массив пустой, в нем будет новые данные
+  создаем новый массив пустой, в нем будет новые данные
   let newCard = []; 
-  // добавляем новые данные в массив
-  // newCard.push(
-  //   {
-  //     name: `${cardNameInput.value}`,
-  //     link: `${imgLinkInput.value}`
-  //   })
-  // initialCards.concat('newCard');//добавляем новый массив в конец старого
+  добавляем новые данные в массив
+  newCard.push(
+    {
+      name: `${cardNameInput.value}`,
+      link: `${imgLinkInput.value}`
+    })
+  initialCards.concat('newCard');//добавляем новый массив в конец старого
   initialCards.push({name: cardNameInput.value, link: imgLinkInput.value});
   closePopup(popupCard);
 }
@@ -25,19 +25,10 @@ formElementCard.addEventListener('submit', formCardSubmit);
 
 // Открытие popup: увеличенная картинка
 function openPopupImg () {
-находим в документе картинку и вешаем слушатель
+находим в документе все картинки и вешаем слушатель
  popupCard.classList.add('popup_opened');
 }
 ???.addEventListener('click', openPopupImg);
-
-// кнопка лайк меняет картинку при нажамии
-function like() {
-   likeButton.classList.toggle('.button-like_pressed');
-}
-likeButton.addEventListener('click', like);
-
-
-// По нажатию на картинку она открывается полноразмерно
 
 
 
@@ -53,13 +44,7 @@ function addCard(cardLinkValue, cardTitleValue) {
 }
 
 // Обработчик отправки формы добавления поста
-function cardSubmitHandler (evt) {
-  evt.preventDefault();
-  profileName.textContent = cardLink.value;
-  profileJob.textContent = cardTitle.value;
-  closePopup();
-}
-cardElement.addEventListener('submit', cardSubmitHandler);
+
 
 addCardButton.addEventListener('click', function () {
   const cardLink = document.querySelector('.input__text_type_card-link');
