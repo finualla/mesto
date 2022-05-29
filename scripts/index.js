@@ -25,9 +25,25 @@ const initialCards = [
     }
   ];
 
-// Template
-const cardList = document.querySelector('.posts__list'); // куда вставляем контент
-const cardTemplate = document.getElementById('card-template').content; // шаблон карточки
+// Эта функция создает карточку, наполняет ее данными и вставляет в разметку
+function createCard(name, link) {
+  const cardList = document.querySelector('.posts__list'); // куда вставляем контент
+  const cardTemplate = document.getElementById('card-template').content; // шаблон карточки
+  let cardElement = cardTemplate.cloneNode(true); // элемент карточки пустой
+  let cardName = cardElement.querySelector('.card__title');//title карточки в html
+  let cardLink = cardElement.querySelector('.card__image'); //ссылка в html
+  let cardImageAlt = cardElement.querySelector('.card__image'); //альт в html
+  // наполняем карточку данными:
+  cardName.textContent = name;
+  cardLink.src = link;
+  cardImageAlt.alt = name;
+  cardList.prepend(cardElement);// вставляем в HTML
+};
+
+// Рендер первых 6 карточек
+initialCards.forEach(function (item) {
+  createCard(item.name, item.link);
+});
 
 //То, куда вставляем данные в html
 let profileName = document.querySelector('.profile__name');
@@ -36,10 +52,8 @@ let profileJob = document.querySelector('.profile__job');
 // Кнопки
 const editButton = document.querySelector('.profile__button-edit');
 const addButton = document.querySelector('.button-add');
-const closeButtons = document.querySelectorAll('.button-close');
 
 // Попапы
-const popups = document.querySelectorAll('.popup');
 const popupName = document.querySelector('.popup_type_edit-name');
 const popupCard = document.querySelector('.popup_type_add-card');
 const popupImg = document.querySelector('.popup_type_image-zoomed');
@@ -60,25 +74,9 @@ function openClosePopup (evt) {
 };
 
 // Слушатель для кнопки крестика попапа
+let closeButtons = document.querySelectorAll('.button-close');
 closeButtons.forEach((item) => {
   item.addEventListener('click', openClosePopup);
-});
-
-// Эта функция рендерит карточку
-function renderCard(name, link) {
-  const cardElement = cardTemplate.cloneNode(true); // элемент карточки пустой
-  let cardName = cardElement.querySelector('.card__title');//title карточки в html
-  let cardLink = cardElement.querySelector('.card__image'); //ссылка в html
-  let cardImageAlt = cardElement.querySelector('.card__image'); //альт в html
-  cardName.textContent = name;
-  cardLink.src = link;
-  cardImageAlt.alt = name;
-  cardList.prepend(cardElement);
-};
-
-// Рендер первых 6 карточек
-initialCards.forEach(function (item) {
-  renderCard(item.name, item.link);
 });
 
 // Открытие попап: редактирование имени
@@ -101,7 +99,7 @@ function openPopupImg (evt) {
   captionZoomed.textContent = evt.target.alt
 };
 // Слушатель для картинок в постах
-const images = cardList.querySelectorAll('.card__image');
+let images = document.querySelectorAll('.card__image');
 images.forEach((item) => {
   item.addEventListener('click', openPopupImg);
 });
@@ -112,7 +110,7 @@ function openPopupCard () {
   cardLinkInput.value = ''; //очищаем поля ввода при открытии попапа
   popupCard.classList.toggle('popup_opened');
 };
-// Слушатель для кнопки с плюсом в профиле
+// Слушатель для кнопки плюс в профиле
 addButton.addEventListener('click', openPopupCard);
 
 // Обработчик отправки формы редактирования имени
@@ -128,7 +126,7 @@ formElementName.addEventListener('submit', formNameSubmit);
 // Обработчик отправки формы добавления поста
 function formCardSubmit (evt) {
   evt.preventDefault();
-  renderCard(cardNameInput.value, cardLinkInput.value);
+  createCard(cardNameInput.value, cardLinkInput.value);
   popupCard.classList.toggle('popup_opened');
 };
 // Слушатель: добавление поста по кнопке
@@ -136,11 +134,11 @@ formElementCard.addEventListener('submit', formCardSubmit);
 
 // Функция удаление поста
 function deleteCard (evt) {
-  const selectedCard = evt.target.closest('.card');
+  let selectedCard = evt.target.closest('.card');
   selectedCard.remove();
 };
 // Слушатель для кнопки корзины
-const deleteButtons = cardList.querySelectorAll('.button-delete');
+let deleteButtons = document.querySelectorAll('.button-delete');
 deleteButtons.forEach((item) => {
   item.addEventListener('click', deleteCard);
 });
@@ -150,7 +148,13 @@ function likeUnlike(evt) {
   evt.target.classList.toggle('button-like_pressed');
 };
 // Слушатель для кнопки лайка
-const likeButtons = cardList.querySelectorAll('.button-like');
+let likeButtons = document.querySelectorAll('.button-like');
 likeButtons.forEach((item) => {
   item.addEventListener('click', likeUnlike);
 });
+
+function UpdateCards () {
+  likeButtons = document.querySelectorAll('.button-like');
+  return likeButtons;
+}
+UpdateCards();
