@@ -1,3 +1,5 @@
+// Тут много комментариев, я писала их для себя. 
+
 const initialCards = [
     {
       name: 'Архыз',
@@ -25,93 +27,95 @@ const initialCards = [
     }
   ];
 
-// Эта функция создает карточку, наполняет ее данными и вставляет в разметку
-function createCard(name, link) {
-  const cardList = document.querySelector('.posts__list'); // куда вставляем контент
-  const cardTemplate = document.getElementById('card-template').content; // шаблон карточки
-  let cardElement = cardTemplate.cloneNode(true); // элемент карточки пустой
-  let cardName = cardElement.querySelector('.card__title');//title карточки в html
-  let cardLink = cardElement.querySelector('.card__image'); //ссылка в html
-  let cardImageAlt = cardElement.querySelector('.card__image'); //альт в html
-  // наполняем карточку данными:
-  cardName.textContent = name;
-  cardLink.src = link;
-  cardImageAlt.alt = name;
-  cardList.prepend(cardElement);// вставляем в HTML
-};
+const cardList = document.querySelector('.posts__list');// куда вставляем контент
+const cardTemplate = document.getElementById('card-template').content;// шаблон карточки
 
-// Рендер первых 6 карточек
-initialCards.forEach(function (item) {
-  createCard(item.name, item.link);
-});
-
-//То, куда вставляем данные в html
-let profileName = document.querySelector('.profile__name');
-let profileJob = document.querySelector('.profile__job');
-
-// Кнопки
-const editButton = document.querySelector('.profile__button-edit');
-const addButton = document.querySelector('.button-add');
-
-// Попапы
+// Попапы:
 const popupName = document.querySelector('.popup_type_edit-name');
 const popupCard = document.querySelector('.popup_type_add-card');
 const popupImg = document.querySelector('.popup_type_image-zoomed');
 
-// Формы для event слушателя
-const formElementName = popupName.querySelector('.popup__form_type_editname');
+// Инпуты в попапах:
+const nameInput = popupName.querySelector('.popup__input_value_name');//поле ввод имя
+const jobInput = popupName.querySelector('.popup__input_value_job');//поле ввод работа
+const cardNameInput = popupCard.querySelector('.popup__input_value_cardname');//поле ввод места
+const cardLinkInput = popupCard.querySelector('.popup__input_value_cardlink');//поле ввод ссылка
+
+// Формы для event слушателя:
+const formElementName = popupName.querySelector('.popup__form_type_editname'); 
 const formElementCard = popupCard.querySelector('.popup__form_type_addcard');
 
-// Инпуты в попапах
-let nameInput = popupName.querySelector('.popup__input_value_name');//поле ввод имя
-let jobInput = popupName.querySelector('.popup__input_value_job');//поле ввод работа
-let cardNameInput = popupCard.querySelector('.popup__input_value_cardname');//поле ввод места
-let cardLinkInput = popupCard.querySelector('.popup__input_value_cardlink');//поле ввод ссылка
+// То, куда вставляем данные в html:
+let profileName = document.querySelector('.profile__name');
+let profileJob = document.querySelector('.profile__job');
 
-// Попап: функция закрытия по крестику
+// Кнопки, кол-во не изменяется:
+const editButton = document.querySelector('.profile__button-edit');
+const addButton = document.querySelector('.button-add');
+const closeButtons = document.querySelectorAll('.button-close');
+
+// Функция создает массив карточек:
+function renderList(data) {
+  data.forEach(item => renderCard(item.name, item.link));
+};
+
+// Функция создает карточку из шаблона, наполняет ее данными и вставляет в разметку:
+function renderCard(name, link) {
+  const cardTemplate = document.getElementById('card-template').content;// шаблон карточки
+  let listElement = cardTemplate.cloneNode(true);// элемент карточки пустой  
+  const cardName = listElement.querySelector('.card__title');//title карточки в html
+  const cardLink = listElement.querySelector('.card__image');//ссылка в html
+  const cardImageAlt = listElement.querySelector('.card__image');//альт в html
+  // наполняем карточку данными:
+  cardName.textContent = name;
+  cardLink.src = link;
+  cardImageAlt.alt = name;
+  subscribeToEvents(listElement);
+  cardList.prepend(listElement);// вставляем в HTML
+};
+
+// Рендерим дефолтные 6 карточек:
+renderList(initialCards);
+
+// Функция закрытия попапа по крестику:
 function openClosePopup (evt) {
   evt.target.closest('.popup').classList.toggle('popup_opened');
 };
 
-// Слушатель для кнопки крестика попапа
-let closeButtons = document.querySelectorAll('.button-close');
-closeButtons.forEach((item) => {
-  item.addEventListener('click', openClosePopup);
-});
-
-// Открытие попап: редактирование имени
+// Функция открытия попапа редактирования имени:
 function openPopupEditName () {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
   popupName.classList.toggle('popup_opened');
 };
-// Слушатель для кнопки редактирования профиля
-editButton.addEventListener('click', openPopupEditName);
 
-// Открытие попап: увеличенная картинка
+// Функция открытие попапа увеличенной картинки
 function openPopupImg (evt) {
-  popupImg.classList.toggle('popup_opened');
-  // находим картинку и текст в попапе куда передадим данные
+  // находим картинку и текст в попапе куда передадим данные:
   const imageZoomed = popupImg.querySelector('.popup__image-zoomed');
   const captionZoomed = popupImg.querySelector('.popup__zoom-caption');
-  // находим данные из поста, которые передаем в попап
+  // находим данные из поста, которые передаем в попап:
   imageZoomed.src = evt.target.src;
-  captionZoomed.textContent = evt.target.alt
+  captionZoomed.textContent = evt.target.alt;
+  popupImg.classList.toggle('popup_opened');
 };
-// Слушатель для картинок в постах
-let images = document.querySelectorAll('.card__image');
-images.forEach((item) => {
-  item.addEventListener('click', openPopupImg);
-});
 
-// Открытие попап: добавление карточки
+// Функция навешать слушателя на элементы/кнопки внутри карточки:
+function subscribeToEvents(listElement) {
+  let likeButton = listElement.querySelector('.button-like');
+  likeButton.addEventListener('click', likeUnlike);
+  let deleteButton = listElement.querySelector('.button-delete');
+  deleteButton.addEventListener('click', deleteCard);
+  let image = listElement.querySelector('.card__image');
+  image.addEventListener('click', openPopupImg);
+};
+
+// Функция открытия попапа добавление карточки
 function openPopupCard () {
-  cardNameInput.value = ''; //очищаем поля ввода при открытии попапа
-  cardLinkInput.value = ''; //очищаем поля ввода при открытии попапа
+  cardNameInput.value = null;// очищаем поля ввода при открытии попапа
+  cardLinkInput.value = null;// очищаем поля ввода при открытии попапа
   popupCard.classList.toggle('popup_opened');
 };
-// Слушатель для кнопки плюс в профиле
-addButton.addEventListener('click', openPopupCard);
 
 // Обработчик отправки формы редактирования имени
 function formNameSubmit (evt) {
@@ -120,41 +124,32 @@ function formNameSubmit (evt) {
   profileJob.textContent = jobInput.value;
   popupName.classList.toggle('popup_opened');
 };
-// Слушатель: редактирование имени
-formElementName.addEventListener('submit', formNameSubmit); 
 
-// Обработчик отправки формы добавления поста
+// Обработчик отправки формы добавления карточки:
 function formCardSubmit (evt) {
   evt.preventDefault();
-  createCard(cardNameInput.value, cardLinkInput.value);
+  renderCard(cardNameInput.value, cardLinkInput.value);
   popupCard.classList.toggle('popup_opened');
 };
-// Слушатель: добавление поста по кнопке
-formElementCard.addEventListener('submit', formCardSubmit); 
 
-// Функция удаление поста
+// Функция удаление поста:
 function deleteCard (evt) {
   let selectedCard = evt.target.closest('.card');
   selectedCard.remove();
 };
-// Слушатель для кнопки корзины
-let deleteButtons = document.querySelectorAll('.button-delete');
-deleteButtons.forEach((item) => {
-  item.addEventListener('click', deleteCard);
-});
 
-// Функция нажатие / отжатие на лайк
+// Функция поставить/убрать лайк:
 function likeUnlike(evt) {
   evt.target.classList.toggle('button-like_pressed');
 };
-// Слушатель для кнопки лайка
-let likeButtons = document.querySelectorAll('.button-like');
-likeButtons.forEach((item) => {
-  item.addEventListener('click', likeUnlike);
-});
 
-function UpdateCards () {
-  likeButtons = document.querySelectorAll('.button-like');
-  return likeButtons;
-}
-UpdateCards();
+// Cлушатели:
+formElementName.addEventListener('submit', formNameSubmit);// Слушатель: редактирование имени
+formElementCard.addEventListener('submit', formCardSubmit);// Слушатель добалвление карточки
+editButton.addEventListener('click', openPopupEditName);// Слушатель для кнопки редактирования профиля
+addButton.addEventListener('click', openPopupCard);// Слушатель для кнопки плюс в профиле
+
+// Слушатель для всех кнопок крестика попапа:
+closeButtons.forEach((item) => {
+  item.addEventListener('click', openClosePopup);
+});
