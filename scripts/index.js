@@ -156,7 +156,7 @@ formElementCard.addEventListener('submit', handleFormCardSubmit);// Слушат
 editButton.addEventListener('click', openPopupEditName);// Слушатель: кнопка редактирования профиля
 addButton.addEventListener('click', openPopupCard);// Слушатель: кнопка с плюсом в профиле
 
-// Закрытия любого попапа по крестику:
+// Слушатель для кнопок крестика в попапах:
 popups.forEach((popup) => {
   popup.addEventListener('click', (evt) => {
     if (evt.target.classList.contains('button-close')) {
