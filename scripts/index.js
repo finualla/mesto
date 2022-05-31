@@ -60,7 +60,7 @@ function renderList(data) {
 
 // Функция создает карточку c по шаблону, наполняет ее данными:
 function createCard(name, link) {
-  let listElement = cardTemplate.cloneNode(true);// элемент карточки пустой
+  const listElement = cardTemplate.cloneNode(true);// элемент карточки пустой
   const cardName = listElement.querySelector('.card__title');//title карточки в html
   const cardLink = listElement.querySelector('.card__image');//ссылка в html
   const cardImageAlt = listElement.querySelector('.card__image');//альт в html
